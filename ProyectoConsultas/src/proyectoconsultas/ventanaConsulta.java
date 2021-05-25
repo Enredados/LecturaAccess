@@ -44,11 +44,11 @@ public class ventanaConsulta extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nombre", "Edad", "Género"
+                "ID", "Nombre", "Edad", "Género", "Sueldo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -118,7 +118,8 @@ public class ventanaConsulta extends javax.swing.JFrame {
                 String Nombre = rs.getString("Nombre");
                 int Edad = rs.getInt("Edad");
                 String Genero = rs.getString("Género");
-                model.addRow(new Object[]{ID,Nombre ,Edad ,Genero });
+                double Sueldo = rs.getDouble("Sueldo");
+                model.addRow(new Object[]{ID,Nombre ,Edad ,Genero, "$ "+Sueldo });
             }
 
             st.close();
