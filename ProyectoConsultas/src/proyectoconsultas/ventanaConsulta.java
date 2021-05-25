@@ -108,6 +108,7 @@ public class ventanaConsulta extends javax.swing.JFrame {
        
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setRowCount(0);
             Connection con;
             con = DriverManager.getConnection("jdbc:ucanaccess://"+raiz+"\\Personal.accdb");
             Statement st = con.createStatement();
